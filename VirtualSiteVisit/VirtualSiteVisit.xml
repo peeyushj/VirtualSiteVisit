@@ -1,0 +1,290 @@
+<krpano>
+    <style name="hotspotstyle" scale="0.6" zoom="true" alpha="1.0" onover="tween(alpha,1);tween(scale,1);" onout="tween(alpha,1.0);tween(scale,0.6);" ondown="onover();" onup="onout();" />
+     <autorotate enabled="true" horizon="0" accel="1.5" speed="7" waittime="2.0"/>
+    <!-- the scenes -->
+    <scene name="scene1" onstart="selectspot(scene1);">
+        <view hlookat="-74.934" vlookat="2.631" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/Shot_1.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/Shot_1.tiles/mobile_%s.jpg" />
+        </image>
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-89.462" atv="-1.798" onclick="looktohotspot(spot2); loadscene(scene2, null, MERGE, BLEND(1));js(responsiveVoice.speak('We have reached the middle of the bridge','Hindi Female'));" />
+    </scene>
+    <scene name="scene2" onstart="selectspot(scene2);">
+        <view hlookat="96.635" vlookat="-10.351" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/Shot_2.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/Shot_2.tiles/mobile_%s.jpg" />
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-91.279" atv="-1.394" onclick="looktohotspot(spot1); loadscene(scene1, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are back to the beginning of the lavaa-sa bridge.'));" />
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="96.020" atv="-2.492" onclick="looktohotspot(spot3); loadscene(scene3, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are at the end of the bridge'));" />
+    </scene>
+    <scene name="scene3" onstart="selectspot(scene3);">
+        <view hlookat="286.044" vlookat="9.463" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/Shot_3.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/Shot_3.tiles/mobile_%s.jpg" />
+        </image>
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="90.136" atv="-0.184" onclick="looktohotspot(spot3); loadscene(scene2, null, MERGE, BLEND(1));js(responsiveVoice.speak('We have reached the middle of the bridge'));" />
+        <hotspot name="spot4" style="hotspotstyle" url="hotspot.png" ath="-80.946" atv="2.283" onclick="looktohotspot(spot4); loadscene(scene4, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are at the parking next to the park at the entrance of Project Exotica'));" />
+    </scene>
+    <scene name="scene4" onstart="selectspot(scene4);">
+        <view hlookat="-164.312" vlookat="-4.828" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/Shot_4.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/Shot_4.tiles/mobile_%s.jpg" />
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-90.404" atv="11.457" onclick="looktohotspot(spot1); loadscene(scene3, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are at the end of the bridge'));" />
+        <hotspot name="spot4" style="hotspotstyle" url="hotspot.png" ath="-139.060" atv="-9.932" onclick="looktohotspot(spot4); loadscene(scene_main-gate, null, MERGE, BLEND(1));js(responsiveVoice.speak('Welcome to the Exotica Fresco . This is the view of the entrance of the society from outside the society .'));set(plugin[map].visible,false);" />
+    </scene>
+    <scene name="scene_main-gate" onstart="">
+        <view hlookat="-181.614" vlookat="-0.010" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/main-gate.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/main-gate.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/main-gate.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <!-- place your scene hotspots here -->
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-175.328" atv="4.210" onclick="looktohotspot(spot1); loadscene(scene_inside-gate, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now inside the premises. this is the view of the beautiful waterfall and the towers behind it .'));" />
+        <hotspot name="spot2" sstyle="hotspotstyle" url="hotspot.png" ath="4.659" atv="-0.456" onclick="looktohotspot(spot2); loadscene(scene4, null, MERGE, BLEND(1));set(plugin[map].visible,true);js(responsiveVoice.speak('We are just outside the entrance of the project exotica.'));" />
+    </scene>
+    <scene name="scene_inside-gate" onstart="">
+        <view hlookat="-44.008" vlookat="-0.353" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/inside-gate.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/inside-gate.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/inside-gate.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-82.403" atv="0.110" onclick="looktohotspot(spot1); loadscene(scene_internal-walkway, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are in the internal walk way of the society, to the left is the basketball court and to the right is the central lawn of the society, towards the back on the right side is the way towards deer park and on the left side is amphitheater'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="178.395" atv="5.990" onclick="looktohotspot(spot2); loadscene(scene_main-gate, null, MERGE, BLEND(1));js(responsiveVoice.speak('Welcome to the Exotica Fresco . This is the view of the entrance of the society from outside the society .'));" />
+    </scene>
+    <scene name="scene_internal-walkway" onstart="">
+        <view hlookat="-30.478" vlookat="24.700" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/internal-walkway.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/internal-walkway.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/internal-walkway.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="173.855" atv="2.948" onclick="looktohotspot(spot1); loadscene(scene_inside-gate, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now inside the premises. this is the view of the beautiful waterfall and the towers behind it .'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-128.621" atv="-3.693" onclick="looktohotspot(spot2); loadscene(scene_amphitheater, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently at the amphitheatre beside the rock garden.'));" />
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="-74.652" atv="14.725" onclick="looktohotspot(spot3); loadscene(scene_basketball-court, null, MERGE, BLEND(1));js(responsiveVoice.speak('This is the view of the basketball court of the society .'));" />
+        <hotspot name="spot4" style="hotspotstyle" url="hotspot.png" ath="-6.288" atv="11.279" onclick="looktohotspot(spot4); loadscene(scene_central-park, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now at the lawn behind the clubhouse building. '));" />
+        <hotspot name="spot5" style="hotspotstyle" url="hotspot.png" ath="117.746" atv="6.202" onclick="looktohotspot(spot5); loadscene(scene_dear-park, null, MERGE, BLEND(1));js(responsiveVoice.speak('we are now at the deer park.'));" />
+    </scene>
+    <scene name="scene_dear-park" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/dear-park.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/dear-park.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/dear-park.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-72.376" atv="3.580" onclick="looktohotspot(spot1); loadscene(scene_internal-periphery, null, MERGE, BLEND(1));js(responsiveVoice.speak('This is the view of the driveway and the basement parking entrance ramp . to your right is the entrance of block H'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-165.469" atv="-2.626" onclick="looktohotspot(spot2); loadscene(scene_amphitheater, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently at the amphitheatre beside the rock garden.'));" />
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="-119.301" atv="-2.360" onclick="looktohotspot(spot3); loadscene(scene_central-park, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now at the lawn behind the clubhouse building. '));" />
+        <hotspot name="spot4" style="hotspotstyle" url="hotspot.png" ath="106.855" atv="-1.815" onclick="looktohotspot(spot4); loadscene(scene_inside-gate, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now inside the premises. this is the view of the beautiful waterfall and the towers behind it .'));" />
+        <hotspot name="spot5" style="hotspotstyle" url="hotspot.png" ath="150.659" atv="-2.524" onclick="looktohotspot(spot5); loadscene(scene_internal-walkway, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are in the internal walk way of the society, to the left is the basketball court and to the right is the central lawn of the society, towards the back on the right side is the way towards deer park and on the left side is amphitheater'));" />
+    </scene>
+    <scene name="scene_central-park" onstart="">
+        <view hlookat="-67.732" vlookat="-9.927" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/central-park.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/central-park.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/central-park.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-90.331" atv="-3.694" onclick="looktohotspot(spot1); loadscene(scene_swimming-pool, null, MERGE, BLEND(1));js(responsiveVoice.speak('we are now at the swimming pool area of the club house.'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-134.438" atv="-1.945" onclick="looktohotspot(spot2); loadscene(scene_basketball-court, null, MERGE, BLEND(1));js(responsiveVoice.speak('This is the view of the basketball court of the society .'));" />
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="45.957" atv="5.891" onclick="looktohotspot(spot3); loadscene(scene_internal-walkway, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are in the internal walk way of the society, to the left is the basketball court and to the right is the central lawn of the society, towards the back on the right side is the way towards deer park and on the left side is amphitheater'));" />
+        <hotspot name="spot4" style="hotspotstyle" url="hotspot.png" ath="125.593" atv="3.968" onclick="looktohotspot(spot4); loadscene(scene_amphitheater, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently at the amphitheatre beside the rock garden.'));" />
+        <hotspot name="spot5" style="hotspotstyle" url="hotspot.png" ath="-23.273" atv="-28.308" onclick="looktohotspot(spot5); loadscene(scene_aerial-view, null, MERGE, BLEND(1));js(responsiveVoice.speak('This is the view of the society from a balcony at 10th floor, this is quite similar to the aerial view of the society'));" />
+    </scene>
+    <scene name="scene_basketball-court" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/basketball-court.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/basketball-court.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/basketball-court.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="7.721" atv="0.802" onclick="looktohotspot(spot1); loadscene(scene_internal-walkway, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are in the internal walk way of the society, to the left is the basketball court and to the right is the central lawn of the society, towards the back on the right side is the way towards deer park and on the left side is amphitheater'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="141.152" atv="-5.037" onclick="looktohotspot(spot2); loadscene(scene_central-park, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now at the lawn behind the clubhouse building. '));" />
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="-164.209" atv="-2.562" onclick="looktohotspot(spot3); loadscene(scene_amphitheater, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently at the amphitheatre beside the rock garden.'));" />
+    </scene>
+    <scene name="scene_amphitheater" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/amphitheater.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/amphitheater.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/amphitheater.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-69.489" atv="1.527" onclick="looktohotspot(spot1); loadscene(scene_dear-park, null, MERGE, BLEND(1));js(responsiveVoice.speak('we are now at the deer park.'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-154.823" atv="0.323" onclick="looktohotspot(spot2); loadscene(scene_internal-walkway, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are in the internal walk way of the society, to the left is the basketball court and to the right is the central lawn of the society, towards the back on the right side is the way towards deer park and on the left side is amphitheater'));" />
+    </scene>
+    <scene name="scene_swimming-pool" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/swimming-pool.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/swimming-pool.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/swimming-pool.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-13.593" atv="-0.973" onclick="looktohotspot(spot1); loadscene(scene_central-park, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now at the lawn behind the clubhouse building. '));" />
+    </scene>
+    <scene name="scene_internal-periphery" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/internal-periphery.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/internal-periphery.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/internal-periphery.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="104.053" atv="3.475" onclick="looktohotspot(spot1); loadscene(scene_elevator-lobby, null, MERGE, BLEND(1));js(responsiveVoice.speak('we are currently in the lobby of block H'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-8.519" atv="3.779" onclick="looktohotspot(spot2); loadscene(scene_inside-gate, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now inside the premises. this is the view of the beautiful waterfall and the towers behind it .'));" />
+    </scene>
+    <scene name="scene_aerial-view" onstart="">
+        <view hlookat="-131.160" vlookat="33.347" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/aerial-view.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/aerial-view.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/aerial-view.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-146.189" atv="37.962" onclick="looktohotspot(spot1); loadscene(scene_central-park, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now at the lawn behind the clubhouse building. '));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-135.141" atv="7.910" onclick="looktohotspot(spot2); loadscene(scene_main-gate, null, MERGE, BLEND(1));js(responsiveVoice.speak('Welcome to the Exotica Fresco . This is the view of the entrance of the society from outside the society .'));" />
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="177.309" atv="-8.419" onclick="looktohotspot(spot3); loadscene(scene_balcony, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently in the balcony, feel free to look around.'));" />
+    </scene>
+    <scene name="scene_balcony" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/balcony.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/balcony.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/balcony.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="152.177" atv="22.096" onclick="looktohotspot(spot1); loadscene(scene_living, null, MERGE, BLEND(1));js(responsiveVoice.speak('Welcome to the beautiful interior of Exotica Fresco 2 BHK apartment. it has a total area of 1110 square feet. We are currently in the living area . the dimension here is 12 feet by 11 feet.'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-54.036" atv="17.775" onclick="looktohotspot(spot2); loadscene(scene_central-park, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now at the lawn behind the clubhouse building. '));" />
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="11.143" atv="14.434" onclick="looktohotspot(spot3); loadscene(scene_swimming-pool, null, MERGE, BLEND(1));js(responsiveVoice.speak('we are now at the swimming pool area of the club house.'));" />
+    </scene>
+    <scene name="scene_elevator-lobby" onstart="">
+        <view hlookat="-179.678" vlookat="14.344" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />`
+        <preview url="../panos/elevator-lobby.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/elevator-lobby.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/elevator-lobby.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="16.572" atv="8.490" onclick="looktohotspot(spot1); loadscene(scene_internal-periphery, null, MERGE, BLEND(1));js(responsiveVoice.speak('This is the view of the driveway and the basement parking entrance ramp . to your right is the entrance of block H'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="-177.945" atv="23.612" onclick="looktohotspot(spot2); loadscene(scene_living, null, MERGE, BLEND(1));js(responsiveVoice.speak('Welcome to the beautiful interior of Exotica Fresco 2 BHK apartment. it has a total area of 1110 square feet. We are currently in the living area . the dimension here is 12 feet by 11 feet.'));" />
+    </scene>
+    <scene name="scene_living" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/living.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/living.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/living.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="8.242" atv="-2.659" onclick="looktohotspot(spot1); loadscene(scene_kitchen, null, MERGE, BLEND(1));js(responsiveVoice.speak('This beautifully designed kitchen is of 7 feet by 8 feet  .'));" />
+        <hotspot name="spot2" style="hotspotstyle" url="hotspot.png" ath="61.616" atv="5.592" onclick="looktohotspot(spot2); loadscene(scene_balcony, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently in the balcony, feel free to look around.'));" />
+        <hotspot name="spot3" style="hotspotstyle" url="hotspot.png" ath="128.504" atv="-8.157" onclick="looktohotspot(spot3); loadscene(scene_elevator-lobby, null, MERGE, BLEND(1));js(responsiveVoice.speak('we are currently in the lobby of block H'));" />
+        <hotspot name="spot4" style="hotspotstyle" url="hotspot.png" ath="157.736" atv="14.293" onclick="looktohotspot(spot4); loadscene(scene_kids-bedroom, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now in the kids bedroom . the area here is 11 feet by 12 feet 6 inches .'));" />
+        <hotspot name="spot5" style="hotspotstyle" url="hotspot.png" ath="-99.091" atv="11.460" onclick="looktohotspot(spot5); loadscene(scene_lounge, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are at the lounge.'));" />
+        <hotspot name="spot6" style="hotspotstyle" url="hotspot.png" ath="-24.256" atv="10.005" onclick="looktohotspot(spot6); loadscene(scene_master-bedroom, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently in the Master bedroom . there is an attached toilet and a 5 feet wide balcony. the area here is 11 feet by 13 feet .'));" />
+        <hotspot name="spot7" style="hotspotstyle" url="hotspot.png" ath="-44.371" atv="-9.234" onclick="looktohotspot(spot7); loadscene(scene_guest-bedroom, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are now in the guest bedroom . there is a common toilet and a 5 feet wide balcony . the area here is 11 feet by 11 feet .'));" />
+    </scene>
+    <scene name="scene_master-bedroom" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/master-bedroom.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/master-bedroom.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/master-bedroom.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-44.321" atv="16.371" onclick="looktohotspot(spot1); loadscene(scene_living, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently in the living area'));" />
+    </scene>
+    <scene name="scene_lounge" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/lounge.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/lounge.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/lounge.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="126.002" atv="12.303" onclick="looktohotspot(spot1); loadscene(scene_living, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently in the living area'));" />
+    </scene>
+    <scene name="scene_guest-bedroom" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/guest-bedroom.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/guest-bedroom.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/guest-bedroom.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-161.415" atv="14.089" onclick="looktohotspot(spot1); loadscene(scene_living, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently in the living area'));" />
+    </scene>
+    <scene name="scene_kids-bedroom" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/kids-bedroom.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/kids-bedroom.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/kids-bedroom.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="97.606" atv="31.895" onclick="looktohotspot(spot1); loadscene(scene_living, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently in the living area'));" />
+    </scene>
+    <scene name="scene_kitchen" onstart="">
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <preview url="../panos/kitchen.tiles/preview.jpg" />
+        <image>
+            <cube url="../panos/kitchen.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="../panos/kitchen.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+        <hotspot name="spot1" style="hotspotstyle" url="hotspot.png" ath="-108.898" atv="10.221" onclick="looktohotspot(spot1); loadscene(scene_living, null, MERGE, BLEND(1));js(responsiveVoice.speak('We are currently in the living area'));" />
+    </scene>
+    <!-- container layer -->
+    <!-- <layer name="mapcontainer" type="container" bgcolor="0xFFFFFF" bgalpha="0.5" align="leftbottom" x="5" y="5" width="270" height="370">
+ -->
+    <!-- maps plugin - use Google for HTML5 and Bing for Flash (the key is for Bing only) -->
+    <plugin name="map" keep="true" url.html5="%SWFPATH%/plugins/googlemaps.js" url.flash="%SWFPATH%/plugins/bingmaps.swf" align="leftbottom" x="10" y="10" width="250" height="350" key="An4-9WoANqtASVorNezSjENest2VC0zoAzvMhEpdTjb3uY-k6u6bMkPxYpDsolsF" maptype="SATELLITE" onmapready="js(responsiveVoice.speak('welcome to lavaa-sa,Lavaa-sa is a private planned city being built near Pune.It is stylistically based on the Italian town Portofino, with a street and several buildings bearing the name of that town. it is a 25,000 acres or 8,000 acresproject being developed by HCC. lavaa-sa is best accessed by road. The access points through which you can get to lavaa-sa are from pune Via Chandini Chowk through Pirangut and From Mumbai Via the Mumbai-Pune Expressway. We can also reach lavaa-sa through Mumbai-Goa Highway Via Kolad . We are currently on the lavaa-sa bridge, please feel free to look around'));loadscene(0);zoomToSpotsExtent();" onmapmoved="" onmapzoomed="" lat="18.3975953" lng="73.5031394" zoom="17">
+        <radar visible="true" size="300" alpha="0.33" fillcolor="0xFFFFFF" fillalpha="1.0" linecolor="0x00FF00" linealpha="0.5" linewidth="0.5" dragable="true" headingoffset="0" />
+        <maptypecontrol visible="true" anchor="righttop" x="2" y="2" buttonalign="v" />
+        <!-- <spot name="spot1" lat="41.898761" lng="12.473094" heading="0" active="true" />
+ -->
+        <!-- heading +90 , +155  , -127
+  -->
+        <spot name="scene1" lat="18.398206" lng="73.5016248" heading="180" active="true" onclick="js(responsiveVoice.speak('We are back to the beginning of the lavaa-sa bridge.'));loadscene(scene1, null, MERGE, BLEND(1));" />
+        <spot name="scene2" lat="18.3978012" lng="73.5032323" heading="0" onclick="js(responsiveVoice.speak('We have reached the middle of the bridge'));loadscene(scene2, null, MERGE, BLEND(1));" />
+        <spot name="scene3" lat="18.3972797" lng="73.5044719" heading="-160" onclick="js(responsiveVoice.speak('We are at the end of the bridge'));loadscene(scene3, null, MERGE, BLEND(1));" />
+        <spot name="scene4" lat="18.3931176" lng="73.5056994" heading="-160" onclick="js(responsiveVoice.speak('We are at the parking next to the park at the entrance of Project Exotica'));loadscene(scene4, null, MERGE, BLEND(1));" />
+    </plugin>
+    <!-- </layer>
+ -->
+    <!-- an action for updating the map when the scene was changed -->
+    <action name="selectspot">
+        plugin[map].pantospot(%1); plugin[map].activatespot(%1);
+    </action>
+</krpano>

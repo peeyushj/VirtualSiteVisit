@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+
+html,body{
+
+	cursor:-webkit-grab;
+
+}
+
+html:active,body:active{
+
+	cursor:-webkit-grabbing
+}
